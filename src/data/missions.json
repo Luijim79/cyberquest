@@ -1,0 +1,119 @@
+{
+  "levels": [
+    {
+      "id": "correo-falso",
+      "type": "phishing",
+      "title": "La alerta bancaria",
+      "subtitle": "Revisa el correo",
+      "email": {
+        "from": "alertas@banc0-seguridad.example",
+        "subject": "Tu cuenta será bloqueada hoy",
+        "body": "Detectamos una actividad irregular. Entra inmediatamente al enlace y escribe tu contraseña para recuperar el acceso.",
+        "url": "https://banc0-acceso.example/verificar",
+        "phishing": true,
+        "clues": [
+          {
+            "id": "sender",
+            "label": "Remitente",
+            "detail": "El nombre usa un cero en lugar de la letra o."
+          },
+          {
+            "id": "subject",
+            "label": "Asunto",
+            "detail": "Quieren que respondas rápido."
+          },
+          {
+            "id": "body",
+            "label": "Mensaje",
+            "detail": "Te piden la contraseña."
+          },
+          {
+            "id": "url",
+            "label": "Enlace",
+            "detail": "El enlace no parece ser del banco."
+          }
+        ]
+      }
+    },
+    {
+      "id": "usb",
+      "type": "escape",
+      "title": "El USB desconocido",
+      "subtitle": "¿Qué harías?",
+      "scene": "Encuentras una memoria USB desconocida sobre tu escritorio.",
+      "icon": "💾",
+      "options": [
+        {
+          "label": "Conectarla al computador",
+          "safe": false,
+          "feedback": "No sabes qué contiene ese USB."
+        },
+        {
+          "label": "Reportarla al encargado",
+          "safe": true,
+          "feedback": "Bien. No conectaste un USB desconocido."
+        }
+      ]
+    },
+    {
+      "id": "cuenta",
+      "type": "password",
+      "title": "Defiende la cuenta",
+      "subtitle": "Protege la cuenta de Alex"
+    },
+    {
+      "id": "correo-real",
+      "type": "phishing",
+      "title": "El mensaje de biblioteca",
+      "subtitle": "Revisa este correo",
+      "email": {
+        "from": "biblioteca@universidad.example",
+        "subject": "Nuevo horario de biblioteca",
+        "body": "Esta semana la biblioteca atenderá de 8 a 17 horas. Puedes consultar los detalles en el portal institucional habitual.",
+        "url": "https://universidad.example/biblioteca",
+        "phishing": false,
+        "clues": []
+      }
+    },
+    {
+      "id": "llamada",
+      "type": "escape",
+      "title": "La llamada de soporte",
+      "subtitle": "¿Qué harías?",
+      "scene": "Alguien que dice ser de soporte pide tu contraseña para resolver una incidencia.",
+      "icon": "📞",
+      "options": [
+        {
+          "label": "Compartir la contraseña",
+          "safe": false,
+          "feedback": "No compartas tu contraseña por teléfono."
+        },
+        {
+          "label": "Colgar y verificar por el canal oficial",
+          "safe": true,
+          "feedback": "Bien. Comprobaste quién estaba llamando."
+        }
+      ]
+    },
+    {
+      "id": "wifi",
+      "type": "escape",
+      "title": "Conexión en la cafetería",
+      "subtitle": "Último nivel",
+      "scene": "Debes consultar información de trabajo desde una cafetería con Wi-Fi público.",
+      "icon": "📶",
+      "options": [
+        {
+          "label": "Acceder sin protección",
+          "safe": false,
+          "feedback": "Esa red puede ser insegura."
+        },
+        {
+          "label": "Usar una conexión confiable",
+          "safe": true,
+          "feedback": "Bien. Usaste una conexión más segura."
+        }
+      ]
+    }
+  ]
+}
